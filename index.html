@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Registration System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🎓 WorkshopHub</div>
+        <div class="header-text">
+            <h1>Workshop Registration</h1>
+            <p>Register • Learn • Grow</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+            <div class="stat-card">
+                <span>👥</span>
+                <div>
+                    <h2 id="totalParticipants">0</h2>
+                    <p>Total Participants</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>📅</span>
+                <div>
+                    <h2>2026</h2>
+                    <p>Workshop Year</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>✅</span>
+                <div>
+                    <h2>Open</h2>
+                    <p>Registration Status</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Form -->
+        <section class="card">
+
+            <div class="section-title">
+                <h2>📝 Register for Workshop</h2>
+                <p>Fill in your details to reserve your seat.</p>
+            </div>
+
+            <form id="registrationForm">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            pattern="[0-9]{10}"
+                            required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Workshop</label>
+                        <select id="workshop" required>
+                            <option value="">Select Workshop</option>
+                            <option>Web Development</option>
+                            <option>Python Programming</option>
+                            <option>Artificial Intelligence</option>
+                            <option>Cyber Security</option>
+                            <option>Data Science</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>College / Organization</label>
+                        <input
+                            type="text"
+                            id="organization"
+                            placeholder="Enter college name"
+                            required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Mode</label>
+                        <select id="mode" required>
+                            <option value="">Select Mode</option>
+                            <option>Online</option>
+                            <option>Offline</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="register-btn">
+                    Register Now →
+                </button>
+
+            </form>
+
+            <div id="message"></div>
+
+        </section>
+
+        <!-- Participant Section -->
+        <section class="card">
+
+            <div class="participant-header">
+                <div>
+                    <h2>👥 Registered Participants</h2>
+                    <p>View and manage workshop registrations.</p>
+                </div>
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="🔍 Search participant...">
+            </div>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Workshop</th>
+                            <th>Mode</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="participantTable">
+                    </tbody>
+
+                </table>
+
+                <div id="emptyMessage">
+                    No participants registered yet.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Confirmation Popup -->
+    <div id="popup" class="popup-overlay">
+
+        <div class="popup">
+
+            <div class="success-icon">✓</div>
+
+            <h2>Registration Successful!</h2>
+
+            <p id="confirmationText">
+                Your workshop registration has been confirmed.
+            </p>
+
+            <button onclick="closePopup()">
+                Done
+            </button>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 WorkshopHub | Workshop Registration System</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
